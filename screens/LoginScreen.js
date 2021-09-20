@@ -72,15 +72,11 @@ export default class LoginScreen extends React.Component {
             onPress = {async()=>{
               var email  = await this.state.email;
               var password = await this.state.password
-              //firebase.auth().signInWithEmailAndPassword(email, password)
-              //firebase.auth().signInWithEmailAndPassword(emailId, password)
-              //firebase.auth().signWithEmailAndPassword(email, password)
-              //firebase.auth().signInWithEmailAndPassword()
+              
+             firebase.auth().signInWithEmailAndPassword(email, password)
+             
               .then(()=>{
-                //this.props.navigation.navigate('WriteStory')
-                //this.props.navigation.navigate('writeStory')
-                //this.props.navigate('WriteStory')
-                //this.props.navigate.navigation('WriteStory')
+                this.props.navigation.navigate('WriteStory')
               })
               .catch((error)=> {
                 var errorCode = error.code;
